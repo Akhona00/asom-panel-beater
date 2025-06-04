@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel Beaters</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="font-sans bg-gray-100 text-gray-800" >
+  <script>AOS.init();</script>
+
+  <!-- Navbar -->
+  <nav class="navbar" data-aos="fade-down">
+    <div class="container-nav">
+      <h1 class="logo"> ASOM Panel Beaters</h1>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#booking">Booking</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home -->
+   
+
+<div class="main-content">
+   <section id="home" class="hero-section" class="page active">
+     <div class="hero-overlay" data-aos="zoom-in" class="content-section">
+       <h2 class="hero-title">Professional Panel Beating Services</h2>
+       <p class="hero-subtitle">We restore your vehicle to showroom condition with precision and care.</p>
+     </div>
+   </section>
+ 
+   <!-- About Us -->
+   <section id="about" class="about-section" class="page">
+     <div  data-aos="fade-up" class="content-section">
+       <h2 class="section-title">About Us</h2>
+       <p class="section-text">With over 20 years in the industry, our team of skilled technicians provides top-notch panel beating and spray painting services. We are committed to delivering quality workmanship and customer satisfaction.</p>
+     </div>
+   </section>
+ 
+   <!-- Services -->
+   <section id="services" class="services-section" class="page">
+     <div class="content-section">
+       <h2 class="section-title text-center" data-aos="fade-up">Our Services</h2>
+       <div class="services-grid">
+         <div class="card" data-aos="fade-up" data-aos-delay="100">
+           <h3 class="card-title">Collision Repair</h3>
+           <p class="card-text">We repair collisions from minor dents to major structural work.</p>
+         </div>
+         <div class="card" data-aos="fade-up" data-aos-delay="200">
+           <h3 class="card-title">Paint Services</h3>
+           <p class="card-text">We provide professional spray painting, color matching, and finish restoration.</p>
+         </div>
+         <div class="card" data-aos="fade-up" data-aos-delay="300">
+           <h3 class="card-title">Dent Removal</h3>
+           <p class="card-text">Paintless dent repair and traditional bodywork for all vehicle types.</p>
+         </div>
+         <div class="card" data-aos="fade-up" data-aos-delay="400">
+           <h3 class="card-title">Rust Treatment</h3>
+           <p class="card-text">Comprehensive rust removal and prevention treatments.</p>
+         </div>
+         <div class="card" data-aos="fade-up" data-aos-delay="500">
+           <h3 class="card-title">Insurance Claims</h3>
+           <p class="card-text">We work directly with insurance companies to streamline your claim.</p>
+         </div>
+         <div class="card" data-aos="fade-up" data-aos-delay="600">
+           <h3 class="card-title">Custom Work</h3>
+           <p class="card-text">Custom paint jobs, modifications, and restoration projects.</p>
+         </div>
+         <div></div>
+       </div>
+     </div>
+   </section>
+ 
+   <!-- Gallery -->
+   <section id="gallery" class="gallery-section" class="page">
+     <div class="content-section">
+       <h2 class="section-title" data-aos="fade-up">Gallery</h2>
+       <div class="gallery-grid">
+        <img src="{{ url_for('static', filename='pictures/porsche-4891966_1280.jpg') }}" class="gallery-img" data-aos="zoom-in" />
+        <img src="{{ url_for('static', filename='pictures/laurel-and-michael-evans-c-KDq7nxVdQ-unsplash.jpg') }}" class="gallery-img" data-aos="zoom-in" />
+        <img src="{{ url_for('static', filename='pictures/kate-ibragimova-bEGTsOCnHro-unsplash.jpg') }}" class="gallery-img" data-aos="zoom-in" />
+        <img src="{{ url_for('static', filename='pictures/headlamp-2940_1280.jpg') }}" class="gallery-img" data-aos="zoom-in" />
+        <img src="{{ url_for('static', filename='pictures/car-2564041_1280.jpg') }}" class="gallery-img" data-aos="zoom-in" />
+         <img src="{{ url_for('static', filename='pictures/car-7878056_1280.jpg') }}" class="gallery-img" data-aos="zoom-in" />
+       </div>
+     </div>
+   </section>
+ 
+   <!-- Booking -->
+   <section id="booking" class="booking-section" class="page">
+        <div class="content-section">
+            <h2>Book Your Service</h2>
+            <div class="form-container">
+                <form id="bookingForm" onsubmit="submitBooking(event)">
+                    <div class="form-group">
+                        <label for="customerName">Full Name *</label>
+                        <input type="text" id="customerName" name="customerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleMake">Vehicle Make & Model *</label>
+                        <input type="text" id="vehicleMake" name="vehicleMake" placeholder="e.g., Toyota Camry 2020" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="serviceType">Service Required *</label>
+                        <select id="serviceType" name="serviceType" required>
+                            <option value="">Select a service</option>
+                            <option value="collision-repair">Collision Repair</option>
+                            <option value="paint-services">Paint Services</option>
+                            <option value="dent-removal">Dent Removal</option>
+                            <option value="rust-treatment">Rust Treatment</option>
+                            <option value="insurance-claim">Insurance Claim</option>
+                            <option value="custom-work">Custom Work</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferredDate">Preferred Date</label>
+                        <input type="date" id="preferredDate" name="preferredDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Damage Description</label>
+                        <textarea id="description" name="description" rows="4" placeholder="Please describe the damage or work required..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Booking Request</button>
+                </form>
+                <div id="successMessage" class="success-message">
+                    Thank you! Your booking request has been submitted. We'll contact you within 24 hours to confirm your appointment.
+                </div>
+            </div>
+        </div>
+   </section>
+
+    <section id="contact" class="contact-section" class="page">
+            <div class="content-section">
+                <h2>Contact Us</h2>
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3>📍 Location</h3>
+                        <p>123 Auto Repair Street<br>Industrial Area<br>Johannesburg, 12345</p>
+                    </div>
+                    <div class="contact-card">
+                        <h3>📞 Phone</h3>
+                        <p>Main: (060) 123-4567<br>Emergency: (073) 987-6543</p>
+                    </div>
+                    <div class="contact-card">
+                        <h3>📧 Email</h3>
+                        <p>info@asompanelbeaters.com<br>quotes@asompanelbeaters.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <h3>🕒 Hours</h3>
+                        <p>Mon-Fri: 8:00 AM - 6:00 PM<br>Sat: 9:00 AM - 4:00 PM<br>Sun: Closed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container" data-aos="fade-up">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0095426481173!2d144.9537363156455!3d-37.81627974200381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f2c301e3%3A0x2cfe3dfc0dbfa5b6!2sFlinders%20Street%20Station!5e0!3m2!1sen!2sau!4v1614316001744!5m2!1sen!2sau" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+    </section>
+
+   <!-- Footer -->
+   <footer class="footer">
+     &copy; ASOM 2025 Panel Beaters. All rights reserved by Sisanda Mthembu.
+   </footer>
+</div>
+
+<script>
+    function submitBooking(event) {
+      event.preventDefault();
+    
+      const formData = {
+        customerName: document.getElementById("customerName").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        vehicleMake: document.getElementById("vehicleMake").value,
+        serviceType: document.getElementById("serviceType").value,
+        preferredDate: document.getElementById("preferredDate").value,
+        description: document.getElementById("description").value,
+      };
+    
+      fetch("http://localhost:5000/api/book", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          document.getElementById("successMessage").style.display = "block";
+          document.getElementById("bookingForm").reset();
+        })
+        .catch((error) => {
+          console.error("Error submitting form:", error);
+        });
+    }
+    </script>
+    
+</body>
+</html>
+
+
+    
