@@ -5,7 +5,7 @@ import os
 from flask_wtf import CSRFProtect
 
 app = Flask(__name__)
-CORS(app)  # Allow requests from frontend
+CORS(app)  
 csrf = CSRFProtect(app)
 
 
@@ -15,7 +15,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-# Define the Booking model
+# Defined the Booking model
 class Booking(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     customer_name = db.Column(db.String(100), nullable=False)
@@ -30,7 +30,7 @@ class Booking(db.Model):
 with app.app_context():
     db.create_all()
 
-# Define the routes
+
 @app.route('/')
 def index():
     return render_template('panel.html')    
