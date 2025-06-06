@@ -2,11 +2,11 @@ from flask import Flask, request, jsonify, render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 import os 
-from flask_wtf import CSRFProtect
+
 
 app = Flask(__name__)
 CORS(app)  
-csrf = CSRFProtect(app)
+
 
 
 # Used SQLite for testing 

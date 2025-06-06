@@ -10,7 +10,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #f1f1f1;
-    background: linear-gradient(135deg, #263137 0%, #266999 100% );
+    background: linear-gradient(135deg, #263137 0%, #ffffff 100% );
     min-height: 200vh;
   }
   
@@ -127,10 +127,11 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    color: #ffffff;
   }
   
   .card {
-    background-color: white;
+    background-color: rgba(85, 16, 16, 0.1);
     padding: 1.5rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
@@ -139,7 +140,7 @@ body {
   
   .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(234, 13, 13, 0.15);
   }
   
   .card-title {
@@ -295,7 +296,7 @@ body {
 }
 
 .submit-btn {
-    background: linear-gradient(45deg, #550707, #291818);
+    background: linear-gradient(5deg, #550707, #291818);
     color: white;
     padding: 1rem 2rem;
     border: none;
